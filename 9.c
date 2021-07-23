@@ -12,6 +12,7 @@ int lib_isascii(int c){
 void main(){
     char a = 'h';
     char b = ')';
-    printf("%d %d\n", lib_isascii(a), lib_isascii(b));
-    printf("%d %d\n", isascii(a), isascii(b));
+    char c = '7';
+    printf("%d %d %d\n", lib_isascii(a), lib_isascii(b), lib_isascii(c));
+    printf("%d %d %d\n", isascii(a), isascii(b), isascii(c));
 }

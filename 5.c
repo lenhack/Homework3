@@ -13,7 +13,14 @@ char *lib_strdup(const char *s){
 }
  void main(){
      char *string = "qwertyuiop";
-     
-     printf("%s\n", lib_strdup(string));
-     printf("%s\n", strdup(string));
+     char* string1 = lib_strdup(string);
+     char* string2 = strdup(string);     
+     //printf("%s\n", lib_strdup(string));
+     //printf("%s\n", strdup(string));
+    int a = strcmp(string1, string2);
+	if(a == 0){
+		printf("OK\n");
+	}else{
+		printf("NOT OK\n");
+	}
  }

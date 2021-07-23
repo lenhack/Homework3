@@ -14,5 +14,10 @@ void main(){
     const char* string = "jksfhkajfh";
     int a = lib_strlen(string);
     int b = strlen(string);
-    printf("%d %d", a, b);
+    //printf("%d %d", a, b);
+    if(a == b){
+        printf("OK\n");
+    }else{
+        printf("NOT OK\n");
+    }
 }

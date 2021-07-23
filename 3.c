@@ -22,6 +22,10 @@ void main(){
     char *str2 = "hgfdsa";
     int a = lib_strcmp(str1, str2);
     int b = strcmp(str1, str2);
-    printf("%d %d", a, b);
-    
+    //printf("%d %d", a, b);
+	if(a == b){
+        printf("OK\n");
+    }else{
+        printf("NOT OK\n");
+    }    
 }
