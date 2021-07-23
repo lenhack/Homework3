@@ -9,8 +9,14 @@ int lib_toupper(int c){
 }
 
 void main(){
-    char a = 'R';
-    char b = 'n';
-    printf("%c %c\n", lib_toupper(a), lib_toupper(b));
-    printf("%c %c\n", toupper(a), toupper(b));
+    char a = 'a';
+    //printf("%c %c\n", lib_toupper(a), lib_toupper(b));
+    //printf("%c %c\n", toupper(a), toupper(b));
+    char b = lib_toupper(a);
+    char c = toupper(a);
+    if(b == c){
+        printf("OK\n");
+    }else{
+        printf("NOT OK\n");
+    }
 }

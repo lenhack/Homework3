@@ -21,8 +21,15 @@ int lib_tolower(int c){
 }
 
 void main(){
-    char a = 'R';
-    char b = 'n';
-    printf("%c %c\n", lib_tolower(a), lib_tolower(b));
-    printf("%c %c\n", tolower(a), tolower(b));
+    char a = 'A';
+    //printf("%c %c\n", lib_tolower(a), lib_tolower(b));
+    //printf("%c %c\n", tolower(a), tolower(b));
+
+    char b = lib_tolower(a);
+    char c = tolower(a);
+    if(b == c){
+        printf("OK\n");
+    }else{
+        printf("NOT OK\n");
+    }
 }
