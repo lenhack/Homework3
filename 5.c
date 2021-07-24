@@ -8,8 +8,9 @@ char *lib_strdup(const char *s){
     for(int i = 0; i < strlen(s); i++){
         s2[i] = s[i];
     }
-    return s2;
     free(s2);
+    return s2;
+    
 }
  void main(){
      char *string = "qwertyuiop";

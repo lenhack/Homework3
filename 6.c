@@ -3,12 +3,10 @@
 #include <stdlib.h>
 
 char *lib_strchr(const char* s, int c){
-    int i = 0;
-    while(s[i]!=c){
-        i++;
+    while(*s != c && *s != '\0'){
+        s++;
     }
-    return (char*)s;
-
+    return s;
 }
 
 void main(){
