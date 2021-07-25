@@ -6,7 +6,7 @@ char *lib_strcat(const char *dest,const char *src){
     int len1 = strlen(dest);
     int len2 = strlen(src);
     int len = len1 + len2 + 1;
-    char * new = (char*)malloc(len);
+    char new[len];
     
     int a = 0;
     int i = 0;
