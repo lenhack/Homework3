@@ -3,8 +3,7 @@
 #include <stdlib.h>
 
 char* string_to_lower(char* str){
-    for(int i = 0; str[i]!='\0'; i++){
-        int i = 0;
+    int i = 0;
     char* str2 = (char*)malloc(strlen(str));
     while(str[i]){
         if(i%2 == 0){
@@ -22,8 +21,8 @@ char* string_to_lower(char* str){
         }
         i++;
     }
+    str2[i]='\0';
     return str2;
-    }
 }
 
 void main(){

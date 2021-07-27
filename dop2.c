@@ -14,6 +14,7 @@ char* string_to_lower(char* str){
         }
         i++;
     }
+    str2[i]='\0';
     return str2;
 }
 
