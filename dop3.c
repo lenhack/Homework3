@@ -1,19 +1,34 @@
 #include <string.h>
 #include <stdio.h>
 #include <ctype.h>
+#include <stdlib.h>
 
-void string_to_lower(char* str){
+char* string_to_lower(char* str){
     for(int i = 0; str[i]!='\0'; i++){
-        if(i%2 != 0){
-            str[i] = tolower(str[i]);
+        int i = 0;
+    char* str2 = (char*)malloc(strlen(str));
+    while(str[i]){
+        if(i%2 == 0){
+            if(str[i] > 96 && str[i] < 123){
+                str2[i] = str[i] - 32;
+            }else{
+                str2[i] = str[i];
+            }
         }else{
-            str[i] = toupper(str[i]);
+            if(str[i] > 64 && str[i] < 91){
+                str2[i] = str[i] + 32;
+            }else{
+                str2[i] = str[i];
+            }
         }
+        i++;
+    }
+    return str2;
     }
 }
 
 void main(){
-    char string[]= {'A', 'b', 'c', 'd', 'e', 'f', 'G'};
-    string_to_lower(string);
-    printf("%s\n", string);
+    char * string= {"AbcdefGHIjklM"};
+    char* string2 = string_to_lower(string);
+    printf("%s\n", string2);
 }

@@ -1,15 +1,24 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+#include <stdlib.h>
 
-void string_to_upper(char *str){
-    for(int i = 0; str[i]!='\0'; i++){
-        str[i] = toupper(str[i]);
+char* string_to_upper(char *str){
+    int i = 0;
+    char* str2 = (char*)malloc(strlen(str));
+    while(str[i]){
+        if(str[i] > 96 && str[i] < 123){
+            str2[i] = str[i] - 32;
+        }else{
+            str2[i] = str[i];
+        }
+        i++;
     }
+    return str2;
 }  
 
 void main(){
-    char string[]= {'A', 'b', 'c', 'd', 'e', 'f', 'G', };
-    string_to_upper(string);
-    printf("%s\n", string);
+    char * string= {"AbcdefGHIjklM"};
+    char* string2 = string_to_upper(string);
+    printf("%s\n", string2);
 }
