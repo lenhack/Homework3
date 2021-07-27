@@ -23,4 +23,5 @@ char *lib_strdup(const char *s){
 	}else{
 		printf("NOT OK\n");
 	}
+    free(string1);
  }
