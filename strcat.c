@@ -21,7 +21,6 @@ char *lib_strcat(const char *dest,const char *src){
 	    y++;
 	}
 	new[e+y] = '\0';
-	free(new);
 	return new;	
 }  
 

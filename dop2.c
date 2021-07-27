@@ -21,4 +21,5 @@ void main(){
     char * string= {"AbcdefGHIjklM"};
     char* string2 = string_to_lower(string);
     printf("%s\n", string2);
+    free(string2);
 }

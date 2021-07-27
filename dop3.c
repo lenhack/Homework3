@@ -1,6 +1,5 @@
 #include <string.h>
 #include <stdio.h>
-#include <ctype.h>
 #include <stdlib.h>
 
 char* string_to_lower(char* str){
@@ -28,7 +27,8 @@ char* string_to_lower(char* str){
 }
 
 void main(){
-    char * string= {"AbcdefGHIjklM"};
+    char * string= {"AbcdefG HIjklM"};
     char* string2 = string_to_lower(string);
     printf("%s\n", string2);
+    free(string2);
 }

@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <string.h>
-#include <ctype.h>
 #include <stdlib.h>
 
 char* string_to_upper(char *str){
@@ -21,4 +20,5 @@ void main(){
     char * string= {"AbcdefGHIjklM"};
     char* string2 = string_to_upper(string);
     printf("%s\n", string2);
+    free(string2);
 }
