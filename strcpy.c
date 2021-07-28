@@ -4,11 +4,14 @@
 
 
 char* lib_strcpy(char *dest, const char *src){
-    int len = strlen(src);
-    for(int i = 0; i <= len; i++){
-        dest[i] = src[i];
+    char *temp = dest;
+    while(*src){
+        *temp = *src;
+        temp++;
+        src++;
     }
-    dest[len] = '\0';
+    *temp = '\0';
+    return dest;
 }
 
 void main(){
