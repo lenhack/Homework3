@@ -4,15 +4,17 @@
 
 
 char *lib_strdup(const char *s){
-    char *s2 = (char*)malloc(strlen(s));
-    for(int i = 0; i < strlen(s); i++){
+    int len = strlen(s)+1;
+    char *s2 = (char*)malloc(len);
+    for(int i = 0; i < len; i++){
         s2[i] = s[i];
     }
+    s2[len] = '\0';
     return s2;    
 }
 
  void main(){
-     char *string = "qwertyuiop";
+     char *string = "qwerty trew0";
      char* string1 = lib_strdup(string);
      char* string2 = strdup(string);     
      //printf("%s\n", lib_strdup(string));
