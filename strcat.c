@@ -2,39 +2,42 @@
 #include <string.h>
 #include <stdlib.h>
 
-char *lib_strcat(const char *dest,const char *src){
-    int len1 = strlen(dest);
-    int len2 = strlen(src);
-    int len = len1 + len2 + 1;
-    char new[len];
-    
-    int a = 0;
-    int i = 0;
-	while(dest[i] != '\0'){
-	    new[i] = dest[i];
-	    i++;
+char *lib_strcat(char *dest,const char *src){
+	char * temp = dest;
+	while(*temp){
+		temp++;
 	}
-	int e = strlen(new);
-	int y = 0;
-	while(src[y] != '\0'){
-	    new[e+y] = src[y];
-	    y++;
+	while(*src){
+		*temp = *src;
+		temp++;
+		src++;
 	}
-	new[e+y] = '\0';
-	return new;	
+	*temp = '\0';
+	return dest;
 }  
 
-void main(){
-    char str1[9] = {'a', 'b', 'c', 'd'};
-    const char *str2 = "efgh";
-    char* string1 = lib_strcat(str1, str2);
-	char* string2 = strcat(str1, str2);
-    //printf("%s", string);
+void main(int arc, char**arv){
+	char *s1 = "aaaa ";
+	char *s2 ="bbbb";
+	int len1 = strlen(s1);
+	int len2 = strlen(s2);
+ 	int n = len1 + len2 + 1;
+	char *dst = (char *)malloc(n);
+	
+	strcpy(dst, s1);
+	
+	char* string1 = lib_strcat(dst, s2);
+	char* string2 = strcat(dst, s2);
+	printf("%s\n", string1);
+	printf("%s\n", string2);
+	
+
+    
+
 	int a = strcmp(string1, string2);
 	if(a == 0){
 		printf("OK\n");
 	}else{
 		printf("NOT OK\n");
 	}
-
 }

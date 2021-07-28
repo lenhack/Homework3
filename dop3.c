@@ -1,33 +1,29 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 
-char* string_to_lower(char* str){
-    int i = 0;
-    char* str2 = (char*)malloc(strlen(str));
-    while(str[i]){
-        if(i%2 == 0){
-            if(str[i] > 96 && str[i] < 123){
-                str2[i] = str[i] - 32;
-            }else{
-                str2[i] = str[i];
-            }
+char* camel_case(char* str){
+    int len = strlen(str);
+    char* str2 = (char*)malloc(len+1);
+    for(int i = 0; i<len; i++){
+        if(!(i%2)){
+            str2[i] = toupper(str[i]);
         }else{
-            if(str[i] > 64 && str[i] < 91){
-                str2[i] = str[i] + 32;
-            }else{
-                str2[i] = str[i];
-            }
+            str2[i] = tolower(str[i]);
         }
-        i++;
     }
-    str2[i]='\0';
+    str2[len]='\0';
     return str2;
 }
 
 void main(){
-    char * string= {"AbcdefG HIjklM"};
-    char* string2 = string_to_lower(string);
-    printf("%s\n", string2);
-    free(string2);
+    char* string1= {"AbcdefGHIjklM"};
+    char* string2 ={"Hello, - [poiu&?"};
+    char* string3 = camel_case(string1);
+    char* string4 = camel_case(string2);
+    printf("%s\n", string3);
+    printf("%s\n", string4);
+    free(string3);
+    free(string4);
 }
